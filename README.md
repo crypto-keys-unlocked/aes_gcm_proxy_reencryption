@@ -1,6 +1,6 @@
 # AES GCM Proxy Re-encryption
 
-This Rust library implements proxy re-encryption for symmetric ciphers, focusing on AES in Galois/Counter Mode (GCM). The implementation is based on the principles outlined in the document "Proxy Re-encryption for Symmetric Ciphers" by Debrup Chatterjee.
+This Rust library implements proxy re-encryption for symmetric ciphers, focusing on AES in Galois/Counter Mode (GCM).
 
 ## Features
 
@@ -12,7 +12,7 @@ This Rust library implements proxy re-encryption for symmetric ciphers, focusing
 
 ### GCTR
 The GCTR operation is defined as follows:
-For each plaintext block \(P_i\), the corresponding ciphertext block \(C_i\) is computed as \(P_i \oplus E(K, Y_i)\), where \(E(K, X)\) denotes the encryption of block \(X\) under key \(K\), and \(Y_i\) is the incremented counter value.
+For each plaintext block <i>P<sub>i</sub></i>, the corresponding ciphertext block <i>C<sub>i</sub></i> is computed as <i>P<sub>i</sub> ⊕ E(K, Y<sub>i</sub>)</i>, where <i>E(K, X)</i> denotes the encryption of block <i>X</i> under key <i>K</i>, and <i>Y<sub>i</sub></i> is the incremented counter value.
 
 ### GHASH
 GHASH is used to compute the authentication tag, which ensures the integrity and authenticity of the ciphertext and any additional authenticated data (AAD).
@@ -21,7 +21,7 @@ GHASH is used to compute the authentication tag, which ensures the integrity and
 The GCM authenticated encryption function combines GCTR and GHASH to provide secure encryption and authentication.
 
 ## Proxy Re-Encryption Method
-The library includes functionality to re-encrypt ciphertext from one key to another. This involves computing a new ciphertext \(C^B\) and tag \(T^B\) for a different key \(K_B\) while ensuring the integrity of the original plaintext.
+The library includes functionality to re-encrypt ciphertext from one key to another. This involves computing a new ciphertext <i>C<sub>B</sub></i> and tag <i>T<sub>B</sub></i> for a different key <i>K<sub>B</sub></i> while ensuring the integrity of the original plaintext.
 
 ## Usage
 
